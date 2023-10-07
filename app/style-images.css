@@ -1,0 +1,24 @@
+.forma-cuadro{
+    width: 300px;
+    /* height: 0px; */
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto 10px auto; /* UP LEFT DOWN RIGHT*/
+    margin-top: -2%;
+    position: relative;
+}
+
+.tarjetaProfile{
+    width: 13rem;
+    left: 20%;
+    position: relative;
+}
+
+.profilePicture{
+    width: 70%;
+    /* position: absolute; */
+}
+
+.msjUser{
+    margin-bottom: 20px;
+}

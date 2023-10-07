@@ -1,0 +1,159 @@
+/* Estilos generales de reinicio */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Ocultar la barra de desplazamiento de desplazamiento horizontal en WebKit */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilos para el fondo del cuerpo */
+body {
+    background: url(https://www.xtrafondos.com/wallpapers/montanas-con-nieve-en-el-bosque-3934.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 10px;
+}
+
+/* Estilos para el contenedor principal de inicio de sesión */
+.bg-login {
+    max-width: 400px;
+    margin: 1% auto 1% auto; /* Márgenes 5% en la parte superior e inferior, y centrar horizontalmente */
+    padding: 20px; /* Agrega espacio alrededor del contenido */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.74);
+    text-align: center;
+    max-height: 100vh;
+    overflow-y: hidden; 
+}
+
+/* Estilos para el contenido dentro de .bg-login */
+.bg-login .row {
+    margin-bottom: 10px; /* Reducimos el espaciado entre las filas de contenido */
+}
+
+form{
+    text-align: left;
+}
+/* Estilos para la imagen de perfil */
+.imgProfile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto; /* Centra horizontalmente el div */
+    margin-top: -2%;
+    position: relative;
+}
+
+.imgProfile img {
+    width: 210%;
+    top: -10%;
+    left: 0;
+    position: absolute;
+}
+
+.imgRegister{
+    top: 30%;
+}
+
+#redux{
+    width: 110%;
+    height: 110%;
+    margin-top: -1%;
+    margin-bottom: -2%;
+}
+
+#register {
+    width: 230%;
+    top: -25%;
+    left: -65%;
+}
+
+.card-header p{
+    margin-bottom:-1%;
+}
+
+/* Estilos para los elementos internos */
+.bg-login h1,
+.bg-login h3,
+.bg-login .form-group {
+    margin-bottom: 10px; /* Espaciado entre los elementos internos */
+}
+
+form label{
+    font-weight: bold;
+}
+
+/* Estilos para el botón "Ingresar" */
+.btn-submit {
+    width: 100%; /* Ajusta el ancho del botón al 100% del contenedor */
+    padding: 10px; /* Tamaño del botón */
+}
+
+/* Estilos para el enlace "Olvidaste tu contraseña?" */
+.forgot-password {
+    font-size: 14px;
+    display: block; /* Forzar el salto de línea */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+/* Estilos para el enlace "Regístrate" */
+.register-link {
+    font-size: 14px;
+}
+
+.btnLg{
+    padding: 10px auto;
+    min-width: 99%;
+    min-height: 50px;
+    font-size: larger;
+}
+
+.error-container {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    z-index: 999;
+}
+
+/* Estilos adicionales para el aviso de error */
+.error-container .alert {
+    margin: 0;
+}
+
+.bg-semi-transparent-white {
+    background-color: rgba(255, 255, 255, 0.9); /* Cambia el valor de "0.7" para ajustar la opacidad */
+}
+
+.stEstado{
+    position: relative;
+    text-align: left;
+    left: 0;
+    color: black;
+}
+
+.check-boton .btn-completado {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.mocoso {
+    position: sticky;
+    top: 20px;
+}
+
+.headers{
+    background-color: #383838a2;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
