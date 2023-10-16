@@ -16,7 +16,7 @@
     </div>
     <div class="card-header">
         <h1>Log in</h1>
-        <h5>Inicia sesi&oacute;n en TUDU</h5>
+        <h5><i>Inicia sesi&oacute;n en <code>TUDU</code></i></h5>
     </div>
     <form action="" method="POST">
         <!-- Primer bloque -->

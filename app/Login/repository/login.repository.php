@@ -7,7 +7,11 @@
         private mysqli $mysqli;
 
         private function __construct() {
-            $this->mysqli = new mysqli("localhost", "root", "", "tududb");
+            $host=$_ENV['DB_HOST'];
+            $user=$_ENV['DB_USER'];
+            $pswd=$_ENV['DB_PASSWORD'];
+            $db=$_ENV['DB_DATABASE'];
+            $this->mysqli = new mysqli($host,$user,$pswd,$db);
         }
         
         public static function getInstance(): UsuariosRepository {

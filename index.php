@@ -1,9 +1,33 @@
 <?php
 
-    session_start();
+    $maxlifetime=3; //Tiempo maximo de vida de la sesion en segundos
+    $secure=true; //Habilitar seguridad de la sesion
+    $http_only=true; //Otro tipo de peticion aparte de http es SOAP
+    $samesite='lax';//lax es el valor para indicar que solo venga del propio servidor y no de un externo
+    $host=$_SERVER['HTTP_HOST'];
+
+    session_set_cookie_params([
+        'lifetime' => $maxlifetime,
+        'path' => './',
+        'domain' => $host,
+        'secure' => $secure,
+        'httpOnly' => $http_only,
+        'samesite' => $samesite
+    ]);
+
+    session_start([
+        // 'cookie_lifetime' => 60*60*4
+    ]);
 
     function checkSession():bool{
         return isset($_SESSION['usuario']) && $_SESSION['usuario']!=null;
+    }
+
+    // Chambeando con variales de entorno
+    $env = parse_ini_file(".env");
+
+    foreach ($env as $key => $value) { 
+        $_ENV[$key] = $value;
     }
 ?>
 <!DOCTYPE html>
