@@ -35,6 +35,10 @@
             session_destroy();
             header("Location: /mvc/login");
             break;  
+
+        case "paises":
+            require_once("./app/paises/paises.controller.php");
+            break;
         default:
             header("HTTP/1.1 404 NOT FOUND");
             break;
