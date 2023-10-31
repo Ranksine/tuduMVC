@@ -4,6 +4,8 @@
         $path_components[2] = 'por-continente';
     }
 
+    echo "<script src='/mvc/app/paises/helper/renderPaises.helper.js'></script>";
+
     switch ($path_components[2]) {
         case 'por-continente':
             require_once("./app/paises/por-continente/view/por-continente.view.php");

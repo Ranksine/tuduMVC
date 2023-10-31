@@ -6,14 +6,14 @@
     $samesite='lax';//lax es el valor para indicar que solo venga del propio servidor y no de un externo
     $host=$_SERVER['HTTP_HOST'];
 
-    session_set_cookie_params([
-        'lifetime' => $maxlifetime,
-        'path' => './',
-        'domain' => $host,
-        'secure' => $secure,
-        'httpOnly' => $http_only,
-        'samesite' => $samesite
-    ]);
+    // session_set_cookie_params([
+    //     'lifetime' => $maxlifetime,
+    //     'path' => './',
+    //     'domain' => $host,
+    //     'secure' => $secure,
+    //     'httpOnly' => $http_only,
+    //     'samesite' => $samesite
+    // ]);
 
     session_start([
         // 'cookie_lifetime' => 60*60*4

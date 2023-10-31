@@ -2,7 +2,9 @@
 <hr>
 <section>
     <ul class="list-group">
-        <li id="por-continente" class="list-group-item"><a href="/mvc/paises/por-continente" class="btn btn-link">Por continente</a></li>
-        <li id="por-pais" class="list-group-item"><a href="/mvc/paises/por-pais" class="btn btn-link">Por pa&iacute;s</a></li>
+        <li id="por-continente" class="list-group-item"><a href="/mvc/paises/por-continente" class="btn btn-outline-primary w-100">Por continente</a></li>
+        <li id="por-pais" class="list-group-item"><a href="/mvc/paises/por-pais" class="btn btn-outline-primary w-100">Por pa&iacute;s</a></li>
     </ul>
 </section>
+
+<script src="/mvc/app/paises/common/menu/menu.controller.js"></script>
