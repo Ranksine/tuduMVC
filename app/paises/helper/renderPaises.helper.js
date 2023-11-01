@@ -114,7 +114,7 @@ function renderizarPaises(padre, countries){
             'btn',
             'btn-primary'
         );
-        link.href = '/mvc/paises/ver-pais/'+ country.cca3;
+        link.href = '/paises/ver-pais/'+ country.cca3;
         link.innerText = 'Ver mas...';
         footerCardDiv.appendChild(link);
 

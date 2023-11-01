@@ -24,4 +24,5 @@
         </div>
     </section>
 </main>
-<script src="/mvc/app/paises/por-pais/controller/por-pais.controller.js"></script>
+<script src="/app/paises/por-pais/controller/por-pais.controller.js"></script>
+<script src="/app/paises/helper/renderPaises.helper.js"></script>

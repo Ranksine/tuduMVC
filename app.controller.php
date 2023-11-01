@@ -1,6 +1,6 @@
 <?php //---------------------------------- END POINTS ----------------------------------\\
 
-    switch ($path_components[1]) {
+    switch ($path_components[0]) {
         case 'formulario':
             require_once("./app/registro/controller/registro.controller.php");
             break;
@@ -12,14 +12,14 @@
             if (checkSession()) {
                 require_once("./app/tareas/tareas.controller.php");
             }else 
-                header("Location: /mvc/login");
+                header("Location: /login");
             break;
         
         case 'login':
             if (!checkSession()) {
                 require_once("./app/Login/Login/controller/login.controller.php");                
             }else{
-                header("Location: /mvc/tareas");
+                header("Location: /tareas");
             }
             break;
 
@@ -27,13 +27,13 @@
             if (!checkSession()) {
                 require_once("./app/Login/Registro/controller/registro.controller.php");
             }else{
-                header("Location: /mvc/tareas");
+                header("Location: /tareas");
             }
             break;
 
         case 'logout':
             session_destroy();
-            header("Location: /mvc/login");
+            header("Location: /login");
             break;  
 
         case "paises":

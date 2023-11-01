@@ -48,6 +48,5 @@ function renderInfo() {
     bReg.innerText = `${paisInfo.region}`;
     bCap.innerText = `${paisInfo.capital}`;
     bPob.innerText = `${paisInfo.population}`;
-    console.log(fstIdioma);
     bLang.innerText = `${fstIdioma}`;
 }

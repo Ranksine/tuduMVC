@@ -2,6 +2,7 @@ let paisesContainer = document.getElementById("paises-container");
 
 function onKeyPress(evt) {
     if(evt.key == "Enter") {
+        clearContainer(paisesContainer);
         let textoIngresado = evt.target.value;
         console.log(textoIngresado); 
 
@@ -10,6 +11,7 @@ function onKeyPress(evt) {
             return;
         }
         requestData(textoIngresado);
+
     }
 }
 
@@ -18,7 +20,8 @@ async function requestData(countryName){
     let respuesta = await fetch(url);
     await respuesta.json().then (
         (paises) => {
-            console.log(paises);
+            renderizarPaises(paisesContainer,paises);
+            console.log("holis");
         }
     );
 }

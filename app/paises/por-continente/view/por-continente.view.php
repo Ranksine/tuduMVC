@@ -39,4 +39,4 @@
         </div>
     </section>
 </main>
-<script src="/mvc/app/paises/por-continente/controller/por-continente.controller.js"></script>
+<script src="/app/paises/por-continente/controller/por-continente.controller.js"></script>

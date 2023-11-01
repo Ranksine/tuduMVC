@@ -18,4 +18,4 @@
     </div>
 </div>
 
-<script src = "/mvc/app/paises/ver-pais/controller/ver-pais.controller.js"></script>
+<script src = "/app/paises/ver-pais/controller/ver-pais.controller.js"></script>
