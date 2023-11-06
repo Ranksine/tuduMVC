@@ -1,12 +1,12 @@
 <?php
 
-    if (!isset($path_components[1])) {
-        $path_components[1] = 'por-continente';
+    if (!isset($path_components[$path_index + 1])) {
+        $path_components[$path_index + 1] = 'por-continente';
     }
 
     echo "<script src='/app/paises/helper/renderPaises.helper.js'></script>";
 
-    switch ($path_components[1]) {
+    switch ($path_components[$path_index + 1]) {
         case 'por-continente':
             require_once("./app/paises/por-continente/view/por-continente.view.php");
             break;

@@ -6,7 +6,7 @@ function onKeyPress(evt) {
         let textoIngresado = evt.target.value;
         console.log(textoIngresado); 
 
-        textoIngresado = textoIngresado.trim();
+        textoIngresado = textoIngresado.trim();//Trim elimina los espacios al inicio y al final *Checar expresiones regulares para eliminar espacios intermedios en un string
         if(textoIngresado === '') {
             return;
         }
@@ -23,5 +23,7 @@ async function requestData(countryName){
             renderizarPaises(paisesContainer,paises);
             console.log("holis");
         }
-    );
+    ).catch( error =>{
+        alert("Ha ocurrido un error" + error.message.message);
+    });
 }

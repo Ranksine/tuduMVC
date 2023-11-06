@@ -57,8 +57,6 @@
         $path = ltrim($request_components['path'],"/");
         $path_components = explode("/", $path);
         $path_index = 0;
-
-        
         $components = json_encode($path_components);
 
         /*echo"

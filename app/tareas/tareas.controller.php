@@ -1,8 +1,8 @@
 <?php
-    if ( !isset($path_components[2]) )
-        $path_components[2] = '';
+    if ( !isset($path_components[$path_index + 1]) )
+        $path_components[$path_index + 1] = '';
         
-    switch ($path_components[2]) {
+    switch ($path_components[$path_index + 1]) {
         case '':
             
         case 'mi-lista':

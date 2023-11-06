@@ -1,6 +1,6 @@
 <?php //---------------------------------- END POINTS ----------------------------------\\
 
-    switch ($path_components[0]) {
+    switch ($path_components[$path_index]) {
         case 'formulario':
             require_once("./app/registro/controller/registro.controller.php");
             break;
