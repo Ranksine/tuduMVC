@@ -1,29 +1,4 @@
 <?php
-
-    $maxlifetime=3; //Tiempo maximo de vida de la sesion en segundos
-    $secure=true; //Habilitar seguridad de la sesion
-    $http_only=true; //Otro tipo de peticion aparte de http es SOAP
-    $samesite='lax';//lax es el valor para indicar que solo venga del propio servidor y no de un externo
-    $host=$_SERVER['HTTP_HOST'];
-
-    // session_set_cookie_params([
-    //     'lifetime' => $maxlifetime,
-    //     'path' => './',
-    //     'domain' => $host,
-    //     'secure' => $secure,
-    //     'httpOnly' => $http_only,
-    //     'samesite' => $samesite
-    // ]);
-
-    session_start([
-        // 'cookie_lifetime' => 60*60*4
-    ]);
-
-    function checkSession():bool{
-        return isset($_SESSION['usuario']) && $_SESSION['usuario']!=null;
-    }
-
-    // Chambeando con variales de entorno
     $env = parse_ini_file(".env");
 
     foreach ($env as $key => $value) { 
@@ -35,52 +10,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./app/estilos.css">
-    <link rel="stylesheet" href="./app/style-images.css">
-    <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+    <title>Web Service</title>
 </head>
 <body>
     
     <?php
-    
-        $request_url = $_SERVER['REQUEST_URI'];
+        // Configurar cabeceras para el servicio
+        // Configurando el tipo de contenido para las respustas
+        header("Content-Type: application/json");
+
+        // Configurar el reesto para cualquier origen metetodos permitions 
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET,  POST, PUT, PATH, DELETE, OPTIONS");
+        header("Allow: GET,  POST, PUT, PATH, DELETE, OPTIONS");
+
+        Include_once("./constantes/constantes.php");
+
+        $request_uri = $_SERVER['REQUEST_URI'];
         $request_method = $_SERVER['REQUEST_METHOD'];
 
-        $request_components = parse_url($request_url);
-        if(count($request_components)> 1)
+        $url_components = parse_url($request_url);
+        $query_params = array();
+
+        $path_url = $url_components['path'];
+        $path_url = ltrim($path_url, '/');
+        if(isset($url_components['query']))
         {
-            parse_str($request_components['query'], $query_params);
-            $params = json_encode($query_params);
+            parse_str($url_components['query'], $query_params);
         }
-        $path = ltrim($request_components['path'],"/");
-        $path_components = explode("/", $path);
-        $path_index = 0;
-        $components = json_encode($path_components);
 
-        /*echo"
-            <h2>Recurso solicitado: {$request_components['path']} </h2>  
-            <h3>query params: {$params} </h3> 
-            <h3>Componentes url: {$components} </h3>   
+        $path_components = explode("/", $path_url);
+        $api_check_index = 1;
+        $version_check_index = $api_check_index + 1;
+        $path_index = $version_check_index + 1;
 
+        if(!isset($path_components[$api_check_index]) && $path_components[$api_check_index] != "api"){
+            // Notificar de no existencia de url
+            header(HTTP_CODE_400);
+            // Romper ejecucion de php 
+            exit();
+        }
 
-            
-            
-        ";*/ 
-        require_once("./app.controller.php");
+        if( !isset($path_components[$version_check_index]) || $path_components[$version_check_index] != "v-1"){
+            //Notificar de mala petidición
+            header(HTTP_CODE_400);
+            // Romper ejecucioin del resto de codigo
+            exit();
+        }
+
+        switch($path_components[$version_check_index]){
+            case 'v-1':
+                require_once("./v-1/app-controller.php")
+                break;
+
+            default:
+                header(HTTP_CODE_400);
+                exit();
+        }
+
     ?>    
-    <?php
-        if (checkSession()) {
-            echo"<div class='card mt-5 bg-dark p-3 text-center'>
-            <h4 class='text-white'>Correo: {$_SESSION['usuario']}</h4>
-            </div>";
-        }else{
-            echo"<div class='card mt-5 bg-dark p-3 text-center'>
-                <h4 class='text-white'>No se ha seteado la variable session</h4>
-                </div>";
-        }
-    ?>
-
 </body>
 </html>

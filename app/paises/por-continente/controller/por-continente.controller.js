@@ -55,6 +55,3 @@ async function requestContriesData(continente){
 }
 
 
-
-// Diseñar ver-pais 
-// Modificar la vista y usar el controlador js para extraer el final de la url y usarla para hacer la peticion a restcountries y mostrar toda la informacion del pais 
