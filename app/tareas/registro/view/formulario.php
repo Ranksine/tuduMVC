@@ -18,13 +18,13 @@
 <div class="col-md-4 col-lg-3 col-sm-6 col-12" >
         <div class="mocoso">
             <h3 class="text-center text-white">Menu</h3>
-            <hr style="margin-top:-1px; background=#fff">
+            <hr style="margin-top:-1px; background:#fff">
             <div class="card text-center tarjetaProfile">
                 <div class="forma-cuadro">
                     <img class="card-img-top profilePicture" src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <hr style="margin-top:-1px; background=#fff">
+                    <hr style="margin-top:-1px; background:#fff;">
                     <h5 class="card-title msjUser">Hola, <?php echo $_SESSION["nombre"]; ?></h5> <!-- INCRUSTA EL NOMBRE DE USUARIO -->             
                     <a href="#" class="btn btn-primary"><i class="ri-user-fill"> </i>Perfil</a>
                     <a href="/logout" class="btn btn-outline-primary">Logout</a>

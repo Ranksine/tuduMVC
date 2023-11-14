@@ -3,7 +3,7 @@
         <img id="flagImg" src="" class="card-img-top" alt="Bandera del país">
         <div class="card-body">
             <h5 class="card-title text-center">
-            <img  src="" alt="" style="max-width: 30px; max-height: 30px;"></span>
+            <img  src="" alt="" style="max-width: 30px; max-height: 30px;">
             <p id="divNameMain"></p>
             <hr>
             </h5>
@@ -13,7 +13,7 @@
             <p class="card-text mb-1">Idioma Principal: <b id = "paisLang"></b></p>
         </div>
         <div class="card-footer text-center">
-            <a class="btn btn-primary w-100" href="#">Regresar</a>
+            <a class="btn btn-primary w-100" href="/paises/">Regresar</a>
         </div>
     </div>
 </div>
