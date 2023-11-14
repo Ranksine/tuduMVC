@@ -24,6 +24,6 @@ async function requestData(countryName){
             console.log("holis");
         }
     ).catch( error =>{
-        alert("Ha ocurrido un error" + error.message.message);
+        // alert("Ha ocurrido un error" + error.message.message);
     });
 }

@@ -69,7 +69,7 @@
     <div class="row mb-3">
         <div class="col">
             <div class="form-group">
-                ¿Aún no tienes cuenta? <a href="/mvc/registro" class="register-link">¡Regístrate!</a>
+                ¿Aún no tienes cuenta? <a href="/registro" class="register-link">¡Regístrate!</a>
             </div>
         </div>
     </div>

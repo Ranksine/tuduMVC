@@ -9,7 +9,7 @@
              if (checkSession()) 
                 require_once("./app/tareas/mi-lista/controller/mi-lista.controller.php");
             else 
-                header("Location /mvc/login");
+                header("Location /login");
             
             break;
 
@@ -17,10 +17,10 @@
             if (checkSession()) 
                 require_once("./app/tareas/registro/controller/registro.controller.php");
             else
-                header("Location /mvc/login"); 
+                header("Location /login"); 
             break;
             
         default:
-            header("Location: /mvc/tareas");
+            header("Location: /tareas");
             break;
     }

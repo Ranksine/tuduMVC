@@ -31,10 +31,10 @@ switch ($request_method) {
         $userInfo=usuariosRepository::getInstance()->buscarUsuario($usuario);
         $_SESSION["usuario"]=$userInfo["idusuario"];
         $_SESSION["nombre"]=$userInfo["nombre"];
-        header("Location: /mvc/tareas");
+        header("Location: /tareas");
 
         // Contraseña válida, redirigir al usuario a la página de tareas
-        header("Location: /mvc/tareas");
+        header("Location: /tareas");
         exit(); // Salir después de la redirección
 
     default:

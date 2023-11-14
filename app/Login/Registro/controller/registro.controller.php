@@ -33,11 +33,11 @@
                 require_once("./app/Login/registro/view/formularioLoginR.php");
             } else{
                 
-                header("Location: /mvc/login");
+                header("Location: /login");
             }
             break;
             
         default:
-            header("Location: /mvc/login");
+            header("Location: /login");
             break;
     }

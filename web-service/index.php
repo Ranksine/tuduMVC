@@ -4,17 +4,6 @@
     foreach ($env as $key => $value) { 
         $_ENV[$key] = $value;
     }
-?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Service</title>
-</head>
-<body>
-    
-    <?php
         // Configurar cabeceras para el servicio
         // Configurando el tipo de contenido para las respustas
         header("Content-Type: application/json");
@@ -29,7 +18,7 @@
         $request_uri = $_SERVER['REQUEST_URI'];
         $request_method = $_SERVER['REQUEST_METHOD'];
 
-        $url_components = parse_url($request_url);
+        $url_components = parse_url($request_uri);
         $query_params = array();
 
         $path_url = $url_components['path'];
@@ -60,7 +49,7 @@
 
         switch($path_components[$version_check_index]){
             case 'v-1':
-                require_once("./v-1/app-controller.php")
+                require_once("./v-1/app.controller.php");
                 break;
 
             default:
@@ -69,5 +58,3 @@
         }
 
     ?>    
-</body>
-</html>

@@ -27,15 +27,15 @@
                     <hr style="margin-top:-1px; background=#fff">
                     <h5 class="card-title msjUser">Hola, <?php echo $_SESSION["nombre"]; ?></h5> <!-- INCRUSTA EL NOMBRE DE USUARIO -->             
                     <a href="#" class="btn btn-primary"><i class="ri-user-fill"> </i>Perfil</a>
-                    <a href="/mvc/logout" class="btn btn-outline-primary">Logout</a>
+                    <a href="/logout" class="btn btn-outline-primary">Logout</a>
                 </div>
             </div>
             <ul class="list-group mt-3 stickyMenu">
                 <li class="list-group-item bg-primary">
-                    <a href="/mvc/tareas/registro" class="btn btn-link text-white">Nueva tarea</a>
+                    <a href="/tareas/registro" class="btn btn-link text-white">Nueva tarea</a>
                 </li>
                 <li class="list-group-item ">
-                    <a href="/mvc/tareas" class="btn btn-link ">Mis tareas</a>
+                    <a href="/tareas" class="btn btn-link ">Mis tareas</a>
                 </li>
             </ul>
 

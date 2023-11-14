@@ -17,10 +17,10 @@
             if(!TareasRepository::getInstance()->saveNewTarea($tarea)){
                 $error=TareasRepository::getInstance()->getDBConex()->error;
                 // header("Location: /mvc/tareas/registro?error=CHALE: {$error}");      
-                header("Location: /mvc/tareas/registro?error=CHALE: {$error}");      
+                header("Location: /tareas/registro?error=CHALE: {$error}");      
                 break;      
             }
         default:
-            header("Location: /mvc/tareas");
+            header("Location: /tareas");
             break;
     }

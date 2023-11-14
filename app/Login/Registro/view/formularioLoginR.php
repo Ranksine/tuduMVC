@@ -48,7 +48,7 @@
                         <!-- Sexto bloque: Enlace para Iniciar Sesión -->
                         <div class="text-center">
                             <div class="form-group">
-                                ¿Ya tienes cuenta? <a href="/mvc/login">¡Inicia Sesión!</a>
+                                ¿Ya tienes cuenta? <a href="/login">¡Inicia Sesión!</a>
                             </div>
                         </div>
                     </form>
